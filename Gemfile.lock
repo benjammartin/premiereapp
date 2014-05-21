@@ -226,7 +226,7 @@ DEPENDENCIES
   rake
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
-  sass
+  sass (~> 3.3.7)
   sass-rails
   simple_form
   sqlite3

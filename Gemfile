@@ -20,7 +20,7 @@ group :assets do
 end
 
 gem 'sass-rails'
-gem 'sass'
+gem 'sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem "disqus", ">=1.0.4"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
