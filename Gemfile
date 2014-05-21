@@ -19,7 +19,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'sass-rails',   '~> 3.2.3'
+gem 'sass-rails'
 gem 'jquery-rails'
 gem "disqus", ">=1.0.4"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
