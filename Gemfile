@@ -38,7 +38,7 @@ gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem 'tinymce-rails'
-gem "bootstrap-sass", ">= 2.3.0.0"
+gem "bootstrap-sass"
 gem "simple_form"
 gem "stripe", ">= 1.7.11"
 gem "stripe_event", ">= 0.4.0"
