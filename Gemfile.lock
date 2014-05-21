@@ -206,7 +206,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors (>= 0.7.2)
   binding_of_caller (>= 0.7.1)
-  bootstrap-sass (~> 3.1.1)
+  bootstrap-sass (>= 2.3.0.0)
   cancan (>= 1.6.9)
   capybara (>= 2.0.3)
   coffee-rails (~> 3.2.1)
@@ -226,7 +226,7 @@ DEPENDENCIES
   rake
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
-  sass-rails
+  sass-rails (~> 3.2.3)
   simple_form
   sqlite3
   stripe (>= 1.7.11)

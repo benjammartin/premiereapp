@@ -16,10 +16,11 @@ end
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'sass-rails'
+
 gem 'jquery-rails'
 gem "disqus", ">=1.0.4"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -29,11 +30,11 @@ gem "cucumber-rails", ">= 1.3.1", :group => :test, :require => false
 gem "launchy", ">= 2.2.0", :group => :test
 gem "capybara", ">= 2.0.3", :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem 'bootstrap-sass', '~> 3.1.1'
 gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem 'tinymce-rails'
+gem "bootstrap-sass", ">= 2.3.0.0"
 gem "simple_form"
 gem "stripe", ">= 1.7.11"
 gem "stripe_event", ">= 0.4.0"
