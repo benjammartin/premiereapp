@@ -1,0 +1,50 @@
+
+<%= tinymce %>
+<%= simple_form_for(@step) do |f| %>
+  <% if @step.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@step.errors.count, "error")} prohibited this step from being saved:" %>
+      </h2>
+      <ul>
+        <% @step.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "tinymce", :rows => 20, :cols => 60 %>
+  </div>
+  <div class="field">
+    <%= f.label :video %>
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :support %>
+    <%= f.text_area :support %>
+  </div>
+  <div class="field">
+    <%= f.label :aide %>
+    <%= f.text_area :aide, :class => "tinymce", :rows => 20, :cols => 60 %>
+  </div>
+  <div class="form-inputs">
+    <%= f.association :topic %>
+  </div>
+   <div class="form-inputs">
+    <%= f.association :course %>
+  </div>
+   <div class="form-inputs">
+    <%= f.association :user %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

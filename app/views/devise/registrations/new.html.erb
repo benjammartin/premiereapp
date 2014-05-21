@@ -1,38 +1,73 @@
+<div class="container">
+  <div class="row sinfo">
+     <%= render 'devise/registrations/col' %>
+<div class="col-lg-8">
 <% content_for :head do %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 <% end %>
-<h2>Sign up</h2>
+<div class="panel panel-default">
+<div class="panel-heading"><h2>Inscription </h2></div>
+<div class="panel-body">
 <div id="stripe_error" class="alert alert-error" style="display:none" >
 </div>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'card_form form-vertical' }) do |f| %>
-  <h3><%= params[:plan].titleize if params[:plan] %> Subscription Plan</h3>
-  <%= hidden_field_tag 'plan', params[:plan] %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
+  <legend>
+  <h3>Créez votre compte </h3>
+   </legend>
+  <%= hidden_field_tag 'product', params[:product] %>
   <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %> 
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
+   <div class="field">
+    <%= label_tag :name, "Votre prénom :" %>
+  <%= f.text_field :name, :autofocus => true, class: "form-control" %>
+  <%= label_tag :email, "Votre adresse e-mail :" %>
+  <%= f.text_field :email, :required => true, class: "form-control" %>
+  <%= label_tag :password, "Entrez votre mot de passe :" %>
+  <%= f.text_field :password, :required => true, class: "form-control"  %>
+  <%= label_tag :password, "Confirmez :" %>
+  <%= f.text_field :password_confirmation, :required => true, class: "form-control" %>
+    </div> 
   <% if @user.stripe_token %>
     <p>Credit card acceptance is pending.</p>
   <% else %>
-    <div class="field">
-      <%= label_tag :card_number, "Credit Card Number" %>
-      <%= text_field_tag :card_number, nil, name: nil %>
+  <legend>
+     <br>
+      <h3>Paiement sécurisé par carte bancaire</h3>
+    </legend>
+    <p class="lead">
+      <strong><span class="price">
+        Paiement de $99.00
+      </span></strong>
+    </p>
+    <div class="cc-icons">
+          <img alt="Icon visa" src="http://www.taxiphonebordeaux.fr/images/icons/icons/visa_48.png" /><img alt="Icon mastercard" src="http://www.taxiphonebordeaux.fr/images/icons/icons/mastercard_48.png" />
     </div>
     <div class="field">
-      <%= label_tag :card_code, "Card Security Code (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
+      <%= label_tag :card_number, "Numéro de carte :" %>
+      <%= text_field_tag :card_number, nil, name: nil, class: "form-control"  %>
     </div>
     <div class="field">
-      <%= label_tag :card_month, "Card Expiration" %>
-      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"}%>
-      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year"}%>
+      <%= label_tag :card_code, "Cryptogramme visuel :" %>
+      <%= text_field_tag :card_code, nil, name: nil, class: "form-control" %>
     </div>
     <div class="field">
-      <%= f.input :coupon, :label => 'Promotional Coupon (if any)' %>
+      <%= label_tag :card_month, "Date d'expiration :" %>
+      <div class="form-inline">
+      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control"} %>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "form-control"}%>
     </div>
+
+    </div>
+ <br>
   <% end %>
   <%= f.hidden_field :stripe_token %>
-  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+  <%= f.submit "Valider", class: "btn btn-lg btn-primary btn-block" %>
 <% end %>
+</div>
+  <div class="panel-footer">En créant votre compte, vous acceptez l'intégralité de nos Conditions générales de vente, notre Politique de gestion de Vos informations personnelles et notre Politique Cookies et publicité sur Internet.</div>
+</div>
+</div>
+</div>
+
+
+

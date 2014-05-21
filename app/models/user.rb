@@ -37,9 +37,13 @@ class User < ActiveRecord::Base
         customer = Stripe::Customer.create(
           :email => email,
           :description => name,
-          :card => stripe_token,
-          :plan => roles.first.name
+          :card => stripe_token
         )
+        charge = Stripe::Charge.create(
+          :amount => 9000, # amount in cents, again
+          :currency => "eur",
+          :customer => customer.id
+  ) 
       else
         customer = Stripe::Customer.create(
           :email => email,
@@ -69,24 +73,6 @@ class User < ActiveRecord::Base
   end
   
   def cancel_subscription
-    unless customer_id.nil?
-      customer = Stripe::Customer.retrieve(customer_id)
-      unless customer.nil? or customer.respond_to?('deleted')
-        subscription = customer.subscriptions.data[0]
-        if subscription.status == 'active'
-          customer.cancel_subscription
-        end
-      end
-    end
-  rescue Stripe::StripeError => e
-    logger.error "Stripe Error: " + e.message
-    errors.add :base, "Unable to cancel your subscription. #{e.message}."
-    false
-  end
-  
-  def expire
-    UserMailer.expire_email(self).deliver
-    destroy
   end
   
 end

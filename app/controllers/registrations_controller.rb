@@ -1,9 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def new
-    @plan = params[:plan]
-    if @plan && ENV["ROLES"].include?(@plan) && @plan != "admin"
+    @product = params[:product]
+    if @product && ENV["ROLES"].include?(@product) && @product != "admin"
       super
+      
     else
       redirect_to root_path, :notice => 'Please select a subscription plan below.'
     end
@@ -39,8 +40,8 @@ class RegistrationsController < Devise::RegistrationsController
   private
   def build_resource(*args)
     super
-    if params[:plan]
-      resource.add_role(params[:plan])
+    if params[:product]
+      resource.add_role(params[:product])
     end
   end
 end

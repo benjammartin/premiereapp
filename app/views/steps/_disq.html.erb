@@ -1,0 +1,15 @@
+
+
+  <div id="disqus_thread">
+    <% if ENV['RAILS_ENV'] == :development %>
+      <script>
+        
+        var disqus_developer = true;
+
+      </script>
+    <% end %>
+    <script async="<%= true %>" src="http://courseapp.disqus.com/embed.js" type="text/javascript"></script>
+    <noscript>
+   
+    </noscript>
+  </div>

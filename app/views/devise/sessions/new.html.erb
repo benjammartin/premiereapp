@@ -1,8 +1,42 @@
-<h2>Sign in</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
-  <%= f.input :password %>
-  <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
+
+
+<div class="container">
+  <div class="row sinfo">
+     <%= render 'devise/registrations/col' %>
+<div class="col-lg-8">
+<% content_for :head do %>
 <% end %>
+<div class="panel panel-default">
+<div class="panel-heading"><h2>Connexion</h2></div>
+<div class="panel-body">
+<div id="stripe_error" class="alert alert-error" style="display:none" >
+</div>
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'card_form form-vertical' }) do |f| %>
+<%= f.error_notification %>
+  <legend>
+  <h3>Connectez-vous à votre compte </h3>
+   </legend>
+  <%= display_base_errors resource %>
+   <div class="field">
+  <%= label_tag :email, "Votre adresse e-mail :"%>
+  <%= f.text_field :email, :required => true, class: "form-control", :autofocus => true  %>
+  <%= label_tag :password, "Entrez votre mot de passe :" %>
+  <%= f.password_field :password, :required => false, class: "form-control"  %>
+  <br>
+   <%= f.check_box :remember_me %> 
+   <%= label_tag :remember_me, "se souvenir de moi" %>
+    </div> 
+    <br>
+  <%= f.submit "Valider", class: "btn btn-lg btn-primary btn-block" %>
+  <% end %>
+
+</div>
+  <div class="panel-footer">
 <%= render "devise/shared/links" %>
+</div>
+</div>
+
+</div>
+</div>
+
+

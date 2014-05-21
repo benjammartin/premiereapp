@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+      <div class="blogcontent">
+<br/>
+<div id="wistia_<%= @step.video %>" class="wistia_embed" style="width:1170px;height:660px;">&nbsp;</div>
+<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+<script>
+wistiaEmbed = Wistia.embed("<%= @step.video %>");
+</script>
+<br/>
+<h2>
+  <%= @step.name %>
+  <%= link_to("Continuer", @step.next_step, {:class => 'btn btn-primary btn-lg'}) if @step.next_step %>
+</h2>
+<br/>
+<ul class="nav nav-tabs" data-tabs="tabs">
+  <li class="active">
+    <a data-toggle="tab" href="#lesson">Lesson</a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#support">Support</a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#aide">Aide</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="lesson">
+    <p></p>
+    <%= raw @step.description %>
+  </div>
+  <div class="tab-pane" id="support">
+    <p></p>
+    <%= render 'disq', :locals => { title: @step.name } %>
+
+  </div>
+  <div class="tab-pane" id="aide">
+    <p></p>
+    <%= raw @step.aide %>
+  </div>
+</div>
+<div class="col-lg-4 sidebar"></div>
+<%= link_to 'Edit', edit_step_path(@step) %>
+\|
+<%= link_to 'Back', steps_path %>
+<%= link_to 'Destroy', step_path(@step), method: :delete, data: { confirm: 'Are you sure?' }  %>
+
+

@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<br>
+			<div class="blogcontent">
+				<% for topic in @topics %>
+				<strong> 
+					<div class="panel panel-default">
+						<div class="panel-heading"><%= topic.name %>
+						</div>
+					</strong>
+					<ul class="list-group">
+						<% for step in topic.steps %>
+						<li class="list-group-item">
+							<%= link_to step.name, step %>
+							<p>
+								<%= raw (truncate step.description, length: 250) %>
+							</p>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
