@@ -11,12 +11,11 @@ group :production do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
 
-
+gem 'sass-rails',   '~> 3.2.3'
 gem 'jquery-rails'
 gem "disqus", ">=1.0.4"
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -32,7 +31,6 @@ gem "devise", ">= 2.2.3"
 gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem 'tinymce-rails'
-gem 'haml-rails', '~> 0.3.5'
 gem "simple_form"
 gem "stripe", ">= 1.7.11"
 gem "stripe_event", ">= 0.4.0"
