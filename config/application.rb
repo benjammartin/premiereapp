@@ -37,7 +37,7 @@ module RailsStripeMembershipSaas
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/lib)
 
-
+    config.force_ssl = true
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
@@ -81,3 +81,7 @@ module RailsStripeMembershipSaas
     config.assets.version = '1.0'
   end
 end
+
+
+
+
