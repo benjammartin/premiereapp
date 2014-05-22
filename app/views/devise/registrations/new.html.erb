@@ -40,8 +40,10 @@
       </span></strong>
     </p>
     <div class="cc-icons">
-          <img alt="Icon visa" src="" /><img alt="Icon mastercard" src="" />
+          <%= image_tag "cb.png" %>&nbsp;<%= image_tag "mastercard.png" %>&nbsp;<%= image_tag "am.png" %>&nbsp;<%= image_tag "visa.png" %>
+
     </div>
+    <br>
     <div class="field">
       <%= label_tag :card_number, "Numéro de carte :" %>
       <%= text_field_tag :card_number, nil, name: nil, class: "form-control"  %>
