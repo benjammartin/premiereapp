@@ -1,24 +1,12 @@
 Stripe.api_key = ENV["STRIPE_API_KEY"]
 STRIPE_PUBLIC_KEY = ENV["STRIPE_PUBLIC_KEY"]
 
-class EmailEvent
-  def call(event)
-    Notifier.send_event_email(event).deliver
+StripeEvent.setup do
+  subscribe 'charge.succeeded' do |event|
+    user = User.find_by_customer_id(event.data.object.customer), EmailJson.new
+  
   end
-end
-
-class EmailJson
-  def call(event)
-    Notifier.send_json(event).deliver
+  subscribe 'customer.subscription.deleted' do |event|
+    user = User.find_by_customer_id(event.data.object.customer), EmailJson.new
   end
-end
-
-StripeEvent.configure do |events|
-  events.subscribe 'customer.', EmailEvent.new
-  events.subscribe 'invoice.',  EmailEvent.new
-  events.subscribe 'transfer.', EmailJson.new
-  events.subscribe 'plan.',     EmailJson.new
-  events.subscribe 'coupon.',   EmailJson.new
-  events.subscribe 'charge.',   EmailJson.new
-  events.subscribe 'account.',  EmailJson.new
 end
