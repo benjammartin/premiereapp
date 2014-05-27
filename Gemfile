@@ -42,7 +42,7 @@ gem "bootstrap-sass"
 gem "pony"
 gem "simple_form"
 gem "stripe", ">= 1.7.11"
-gem "stripe_event", ">= 0.4.0"
+gem "stripe_event"
 gem "quiet_assets", ">= 1.0.2", :group => :development
 gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
