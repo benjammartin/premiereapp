@@ -5,6 +5,7 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Apprenez à coder par vous même" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+    <%= Rails.configuration.stripe[:publishable_key] %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>

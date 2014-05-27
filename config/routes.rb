@@ -13,7 +13,7 @@ RailsStripeMembershipSaas::Application.routes.draw do
   
   resources :content
 
-  mount StripeEvent::Engine => '/process', :headers => :any, :methods => [:post]
+  mount StripeEvent::Engine => '/process' # provide a custom path
  
   authenticated :user do
     root :to => 'home#index'
