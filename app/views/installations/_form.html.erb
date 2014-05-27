@@ -1,0 +1,17 @@
+<%= tinymce %>
+
+<%= simple_form_for(@installation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+       <%= f.text_area :description, :class => "tinymce", :rows => 20, :cols => 60 %>
+    <%= f.input :video %>
+       <%= f.text_area :support, :class => "tinymce", :rows => 20, :cols => 60 %>
+    <%= f.input :aide %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

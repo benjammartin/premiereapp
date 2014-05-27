@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div class="row">
+      <div class="blogcontent">
+<br/>
+<iframe width="1170" height="660" src="//www.youtube.com/embed/<%= @installation.video %>" frameborder="0" allowfullscreen></iframe>
+<br/>
+<h2>
+  <%= @installation.name %>
+ 
+</h2>
+<br/>
+<ul class="nav nav-tabs" data-tabs="tabs">
+  <li class="active">
+    <a data-toggle="tab" href="#lesson">Lesson</a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#support">Support</a>
+  </li>
+  <li>
+    <a data-toggle="tab" href="#aide">Aide</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="lesson">
+    <p></p>
+    <%= raw @installation.description %>
+  </div>
+  <div class="tab-pane" id="support">
+    <p></p>
+    
+
+  </div>
+  <div class="tab-pane" id="aide">
+    <p></p>
+    <%= @installation.aide %>
+  </div>
+</div>
+<div class="col-lg-4 sidebar"></div>
+<%= link_to 'Edit', edit_installation_path(@installation) %> 
+\|
+<%= link_to 'Back', installations_path %>
+
