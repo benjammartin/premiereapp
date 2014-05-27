@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
       customer.email = email
       customer.description = name
       customer.save
-     UserMailer.create_email(self).deliver
+    
     end
     self.last_4_digits = customer.cards.data.first["last4"]
     self.customer_id = customer.id
