@@ -70,13 +70,13 @@ RailsStripeMembershipSaas::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    address: => 'smtp.sendgrid.net',
-    port: => '587',
-    domain: => 'heroku.com',
-    authentication: => :plain,
-    enable_starttls_auto: => true,
-    user_name: => 'app25483760@heroku.com',
-    password: => 'nglep2dk'
+    :address => 'smtp.sendgrid.net',
+    :port => '587',
+    :domain => 'heroku.com',
+    :authentication => :plain,
+    :enable_starttls_auto => true,
+    :user_name => 'app25483760@heroku.com',
+    :password => 'nglep2dk'
   }
 
 
