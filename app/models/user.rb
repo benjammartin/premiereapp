@@ -83,6 +83,6 @@ class User < ActiveRecord::Base
 
   def create
     UserMailer.create_email(self).deliver
-    create
+   update
   end
 end
