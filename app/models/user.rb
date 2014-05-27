@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
           :card => stripe_token
         )
         charge = Stripe::Charge.create(
-          :amount => 9000, # amount in cents, again
+          :amount => 90, # amount in cents, again
           :currency => "eur",
           :customer => customer.id
   ) 
