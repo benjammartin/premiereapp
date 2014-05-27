@@ -39,6 +39,7 @@ gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem 'tinymce-rails'
 gem "bootstrap-sass"
+gem "pony"
 gem "simple_form"
 gem "stripe", ">= 1.7.11"
 gem "stripe_event", ">= 0.4.0"
