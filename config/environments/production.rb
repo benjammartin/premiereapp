@@ -75,7 +75,7 @@ RailsStripeMembershipSaas::Application.configure do
     domain: "premiereapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["GMAIL_USERNAME"],
+    user_name: "premiereapprails"
     password: ENV["GMAIL_PASSWORD"]
   }
 
