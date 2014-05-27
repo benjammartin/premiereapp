@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
       customer.email = email
       customer.description = name
       customer.save
-  
+     UserMailer.create_email(self).deliver
     end
     self.last_4_digits = customer.cards.data.first["last4"]
     self.customer_id = customer.id
@@ -74,6 +74,17 @@ class User < ActiveRecord::Base
   end
   
   def cancel_subscription
+  end
+
+
+  def expire
+    UserMailer.expire_email(self).deliver
+    destroy
+  end
+
+  def create
+    UserMailer.create_email(self).deliver
+    update
   end
   
 end

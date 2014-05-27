@@ -1,15 +1,15 @@
 Stripe.api_key = ENV["STRIPE_API_KEY"]
 STRIPE_PUBLIC_KEY = ENV["STRIPE_PUBLIC_KEY"]
 
-
-StripeEvent.setup do
-  subscribe 'customer.subscription.deleted' do |event|
-    subscription = Subscription.find_by_stripe_customer_token(event.data.object.customer)
-    subscription.update_attribute(:subscription_status, "inactive")
+StripeEvent.configure do |events|
+  events.subscribe 'charge.failed' do |event|
+    # Define subscriber behavior based on the event object
+    event.class       #=> Stripe::Event
+    event.type        #=> "charge.failed"
+    event.data.object #=> #<Stripe::Charge:0x3fcb34c115f8>
   end
 
-  subscribe 'invoice.payment_succeeded' do |event|
-    subscription = Subscription.find_by_stripe_customer_token(event.data.object.customer)
-    InvoiceMailer.invoice_subscription(subscription).deliver
-    end
+  events.all do |event|
+    # Handle all event types - logging, etc.
+  end
 end
