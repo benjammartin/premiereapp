@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
       customer.email = email
       customer.description = name
       customer.save
+    UserMailer.registration_confirmation(@user).deliver
     end
     self.last_4_digits = customer.cards.data.first["last4"]
     self.customer_id = customer.id
@@ -71,8 +72,18 @@ class User < ActiveRecord::Base
     self.stripe_token = nil
     false
   end
+
   
   def cancel_subscription
   end
-  
+
+  def expire
+    UserMailer.expire_email(self).deliver
+    destroy
+  end
+
+  def create
+    UserMailer.create_email(self).deliver
+    create
+  end
 end
