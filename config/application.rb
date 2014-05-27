@@ -29,7 +29,8 @@ module RailsStripeMembershipSaas
       g.helper_specs false
     end
 
-    
+
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -40,6 +41,7 @@ module RailsStripeMembershipSaas
     config.autoload_paths += %W(#{config.root}/lib)
 
     config.force_ssl = false
+    
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
