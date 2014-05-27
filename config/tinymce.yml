@@ -7,3 +7,32 @@ theme_advanced_buttons3_add:
 plugins:
   - table
   - fullscreen
+  - insertdatetime
+  - advlist 
+  - autolink 
+  - lists 
+  - link 
+  - image 
+  - charmap 
+  - print 
+  - preview 
+  - hr 
+  - anchor 
+  - pagebreak
+  - searchreplace 
+  - wordcount 
+  - visualblocks 
+  - visualchars 
+  - code
+  - insertdatetime 
+  - media 
+  - nonbreaking 
+  - save 
+  - table 
+  - contextmenu 
+  - directionality
+  - emoticons 
+  - template 
+  - paste 
+  - textcolor 
+  - moxiemanager
