@@ -5,4 +5,3 @@ StripeEvent.configure do |events|
   events.subscribe 'charge.failed', StripeEvents::ChargeFailed.new
   events.subscribe 'charge.succeeded', StripeEvents::ChargeSucceeded.new
   end
-end
