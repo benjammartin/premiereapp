@@ -4,6 +4,12 @@ class Step < ActiveRecord::Base
   belongs_to :user
   attr_accessible :aide, :description, :name, :support, :video, :course_id, :user_id, :topic_id
 
+extend FriendlyId
+  friendly_id :name, use: :slugged
+
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 
 
 def next_step
@@ -11,4 +17,10 @@ def next_step
 end
 
 
+end
+
+
+class Step < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :history
 end
