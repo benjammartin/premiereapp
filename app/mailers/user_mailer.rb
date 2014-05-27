@@ -5,8 +5,4 @@ class UserMailer < ActionMailer::Base
     mail(:to => user.email, :subject => "Hello")
   end
 
-  def create_email(user)
-    mail(:to => user.email, :subject => "Bye")
-  end
-
 end

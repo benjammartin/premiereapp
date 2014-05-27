@@ -82,9 +82,6 @@ class User < ActiveRecord::Base
     destroy
   end
 
-  def create
-    UserMailer.create_email(self).deliver
-    update
-  end
+
   
 end
