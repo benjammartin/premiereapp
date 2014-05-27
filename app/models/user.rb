@@ -76,13 +76,5 @@ class User < ActiveRecord::Base
   def cancel_subscription
   end
 
-  def expire
-    UserMailer.expire_email(self).deliver
-    destroy
-  end
-
-  def create
-    UserMailer.create_email(self).deliver
-   update
-  end
+  
 end
