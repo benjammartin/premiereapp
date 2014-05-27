@@ -2,14 +2,12 @@ Stripe.api_key = ENV["STRIPE_API_KEY"]
 STRIPE_PUBLIC_KEY = ENV["STRIPE_PUBLIC_KEY"]
 
 
-
 StripeEvent.setup do
 
-	 subscribe 'invoice.payment_failed' do |event|
+	subscribe 'invoice.payment_failed' do |event|
     puts "Received Stripe Event 'invoice.payment_failed'"
     StripeWebhooks.payment_failed(event.data.object.customer)
   end
-
 
 	subscribe 'invoice.payment_succeeded' do |event|
     puts "Received Stripe Event 'invoice.payment_succeeded'"
@@ -21,9 +19,7 @@ StripeEvent.setup do
     StripeWebhooks.subscription_created(event.data.object.customer)
   end
   
-
-
-  subscribe 'customer.subscription.deleted' do |event|
+    subscribe 'customer.subscription.deleted' do |event|
     user = User.find_by_customer_id(event.data.object.customer)
     user.expire
   end
