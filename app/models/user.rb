@@ -61,7 +61,6 @@ class User < ActiveRecord::Base
       customer.email = email
       customer.description = name
       customer.save
-    UserMailer.registration_confirmation(@user).deliver
     end
     self.last_4_digits = customer.cards.data.first["last4"]
     self.customer_id = customer.id
