@@ -11,6 +11,10 @@ class InstallationsController < ApplicationController
     end
   end
 
+  def end
+  
+  end
+
   # GET /installations/1
   # GET /installations/1.json
   def show
