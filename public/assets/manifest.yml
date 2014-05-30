@@ -475,3 +475,6 @@ tinymce/skins/lightgray/skin.min.css: tinymce/skins/lightgray/skin.min.css
 tinymce/themes/modern/theme.js: tinymce/themes/modern/theme.js
 tinymce/tinymce.jquery.js: tinymce/tinymce.jquery.js
 tinymce/tinymce.js: tinymce/tinymce.js
+tinymce/plugins/example/dialog.html: tinymce/plugins/example/dialog.html
+tinymce/skins/lightgray/fonts/tinymce-small.dev.svg: tinymce/skins/lightgray/fonts/tinymce-small.dev.svg
+tinymce/skins/lightgray/fonts/tinymce.dev.svg: tinymce/skins/lightgray/fonts/tinymce.dev.svg
