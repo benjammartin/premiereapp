@@ -15,3 +15,7 @@
 //= require bootstrap
 //= require_tree .
 //= require tinymce
+
+$('#openBtn').click(function(){
+	$('#myModal').modal({show:true})
+});
