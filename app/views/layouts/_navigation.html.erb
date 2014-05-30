@@ -10,15 +10,17 @@
          <%= link_to image_tag('logo.png'), root_path %>
         </div>
         <div class="navbar-collapse collapse">
+
           <ul class="nav navbar-nav pull-right">
-        <li><%= link_to "Installer Rails", installations_path %></li>
+
+            <li><%= link_to "Installer Rails", installations_path %></li>
             </li>
              <% if user_signed_in? %>
               <li>
                 <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
                 <% else %>
                 <li><%= link_to 'Login', new_user_session_path %></li>
-                <li><%= link_to "Commencer Aujourd'hui", new_user_registration_path(:product => 'rails')%></li>
+                 <li><button type="button" id="nav-btn" class="btn btn-embossed btn-primary "><%= link_to "Commencer Aujourd'hui", new_user_registration_path(:product => 'rails')%></button></li>
                   <% end %>
                   <% if user_signed_in? %>
                   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
@@ -37,8 +39,6 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-
-
 
 
 
