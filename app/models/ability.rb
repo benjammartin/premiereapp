@@ -8,5 +8,6 @@ class Ability
     else
       can :read, :all if user.has_role? :rails
     end
+    can :read, Installation 
   end
 end

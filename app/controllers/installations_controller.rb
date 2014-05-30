@@ -1,5 +1,6 @@
 class InstallationsController < ApplicationController
-  # GET /installations
+  load_and_authorize_resource
+
   # GET /installations.json
   def index
     @installations = Installation.all
