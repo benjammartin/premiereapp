@@ -5,6 +5,7 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     @steps = Step.all
+    @topics = Topic.find(:all, :include => :steps) 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @steps }
