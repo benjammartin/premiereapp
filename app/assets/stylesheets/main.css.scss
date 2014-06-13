@@ -204,13 +204,13 @@ color: #fff;
   color: #fff; }
 
 #headerwrap-2 {
-  background-image: image-url("about-bg.jpg"); 
+ 
   margin-top: 0;
   padding-top: 160px;
   text-align: center;
   background-attachment: relative;
   background-position: center center;
-  min-height: 600px;
+  min-height: 500px;
   width: 100%;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -222,10 +222,9 @@ color: #fff;
   background-size: cover; }
 
 #headerwrap-2 h1 {
-  color: #fff; }
+  color: #33536d; }
 
 #aboutwrap {
-  background-image: image-url("about-bg.jpg"); 
   margin-top: 0;
   padding-top: 80px;
   text-align: center;
@@ -357,17 +356,17 @@ color: #fff;
   font-weight: 100; }
 
 #cta {
-  background-color: #34495e;
+  background-color: #fff;
   padding-top: 35px;
   padding-bottom: 35px; }
 
 #cta h3 {
-  color: #fff;
+  color: #33536d;
   font-weight: 100; }
 
 #cta p {
   font-weight: 300;
-  color: #c5c5c5; }
+   color: #33536d; }
 
 #g {
   background: #eaeaea;
@@ -591,6 +590,7 @@ border-bottom:1px solid #eee;
 
 #cta  {
 border-bottom:1px solid #eee;
+border-top:1px solid #eee;
 
 }
 
