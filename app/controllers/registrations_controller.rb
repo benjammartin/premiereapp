@@ -1,6 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def new
+    @plan = Stripe::Plan.all
     @product = params[:product]
     if @product && ENV["ROLES"].include?(@product) && @product != "admin"
       super

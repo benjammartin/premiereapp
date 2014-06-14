@@ -26,6 +26,8 @@
   <%= f.text_field :password, :required => true, class: "form-control"  %>
   <%= label_tag :password, "Confirmez :" %>
   <%= f.text_field :password_confirmation, :required => true, class: "form-control" %>
+    <%= label_tag :coupon, "Si vous avez un coupon de reduction :" %>
+  <%= f.text_field :coupon, :required => true, class: "form-control" %>
     </div> 
   <% if @user.stripe_token %>
     <p>Credit card acceptance is pending.</p>
@@ -36,7 +38,7 @@
     </legend>
     <p class="lead">
       <strong><span class="price">
-        Paiement de $99.00
+    
       </span></strong>
     </p>
     <div class="cc-icons">
