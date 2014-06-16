@@ -18,16 +18,16 @@
   <%= hidden_field_tag 'product', params[:product] %>
   <%= display_base_errors resource %>
    <div class="field">
-    <%= label_tag :name, "Votre prénom :" %>
-  <%= f.text_field :name, :autofocus => true, class: "form-control" %>
-  <%= label_tag :email, "Votre adresse e-mail :" %>
-  <%= f.text_field :email, :required => true, class: "form-control" %>
-  <%= label_tag :password, "Entrez votre mot de passe :" %>
-  <%= f.text_field :password, :required => true, class: "form-control"  %>
-  <%= label_tag :password, "Confirmez :" %>
-  <%= f.text_field :password_confirmation, :required => true, class: "form-control" %>
-    <%= label_tag :coupon, "Si vous avez un coupon de reduction :" %>
-  <%= f.text_field :coupon, :required => true, class: "form-control" %>
+   
+  <%= f.text_field :name, :autofocus => true, class: "form-control", :placeholder => "Votre prénom "%>
+  <br>
+  <%= f.text_field :email, :required => true, class: "form-control", :placeholder => "Votre adresse e-mail" %>
+  <br>
+  <%= f.text_field :password, :required => true, class: "form-control",  :placeholder => "Votre mot de passe"  %>
+  <br>
+  <%= f.text_field :password_confirmation, :required => true, class: "form-control",  :placeholder => "Confirmation du mot de passe " %>
+  <br>
+  <%= f.text_field :coupon, :required => true, class: "form-control",  :placeholder => "Si vous avez un coupon de reduction, tapez-le ici" %>
     </div> 
   <% if @user.stripe_token %>
     <p>Credit card acceptance is pending.</p>
@@ -38,7 +38,7 @@
     </legend>
     <p class="lead">
       <strong><span class="price">
-    
+       <%= price_in_euro (@plan.amount) * 10 %>
       </span></strong>
     </p>
     <div class="cc-icons">
@@ -47,18 +47,14 @@
     </div>
     <br>
     <div class="field">
-      <%= label_tag :card_number, "Numéro de carte :" %>
-      <%= text_field_tag :card_number, nil, name: nil, class: "form-control"  %>
+      <%= text_field_tag :card_number, nil, name: nil, class: "form-control", :placeholder => "Numéro de carte"   %>
     </div>
+      <br>
     <div class="field">
-      <%= label_tag :card_code, "Cryptogramme visuel :" %>
-      <%= text_field_tag :card_code, nil, name: nil, class: "form-control" %>
-    </div>
-    <div class="field">
-      <%= label_tag :card_month, "Date d'expiration :" %>
       <div class="form-inline">
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "form-control"}%>
+      <%= text_field_tag :card_code, nil, name: nil, class: "form-control form-ccv",  :placeholder => "CCV"   %>
     </div>
 
     </div>

@@ -12,4 +12,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+def price_in_euro(plan)
+   sprintf("%0.2f€", plan / 1000.0)
+
+  end
 end

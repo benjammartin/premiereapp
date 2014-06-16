@@ -54,6 +54,7 @@ class User < ActiveRecord::Base
       if stripe_token.present?
         customer.card = stripe_token
       end
+      
       customer.email = email
       customer.description = name
       customer.save
