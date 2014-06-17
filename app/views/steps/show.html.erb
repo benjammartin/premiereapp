@@ -40,9 +40,14 @@ wistiaEmbed = Wistia.embed("<%= @step.video %>");
   </div>
 </div>
 <div class="col-lg-4 sidebar"></div>
+
+
+
+
+
+
+<% if if user.role? :admin %>
 <%= link_to 'Edit', edit_step_path(@step) %>
-\|
 <%= link_to 'Back', steps_path %>
 <%= link_to 'Destroy', step_path(@step), method: :delete, data: { confirm: 'Are you sure?' }  %>
-
-
+<% end %>
