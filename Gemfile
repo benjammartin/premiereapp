@@ -22,8 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-
-
+gem 'devise_mailchimp', :git => 'https://github.com/ycourse/devise_mailchimp.git'
 
 gem 'jquery-rails'
 gem "disqus", ">=1.0.4"

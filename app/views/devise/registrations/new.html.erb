@@ -56,7 +56,7 @@
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "form-control"}%>
       <%= text_field_tag :card_code, nil, name: nil, class: "form-control form-ccv",  :placeholder => "CCV"   %>
     </div>
-
+<% render :partial => "devise/shared/mailchimp/form", :locals => {:form => f} %>
     </div>
  <br>
   <% end %>
@@ -64,6 +64,7 @@
   <%= f.submit "Valider", class: "btn btn-lg btn-primary btn-block" %>
 <% end %>
 </div>
+
   <div class="panel-footer">En créant votre compte, vous acceptez l'intégralité de nos <%= link_to "Conditions générales de vente", thecgv_path %> ainsi que nos  <%= link_to "Conditions générales d'utilisation", thecgu_path %></div>
 </div>
 </div>

@@ -32,6 +32,10 @@ Devise.setup do |config|
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
+  Devise.mailchimp_api_key = '5d717c6769efa2a91beda29a3b1e665e-us8'
+  Devise.mailing_list_name = 'Première App'
+  Devise.double_opt_in = false  
+  Devise.send_welcome_email = true
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
