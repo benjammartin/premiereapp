@@ -9,10 +9,12 @@
     </div>
   </div>
   <div class="jumbotron">
-  <h1><%= @course.name %></h1>
+    <% @courses.each do |course| %>
+  <h1><%= course.name %></h1>
   <p>...</p>
   <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
 </div>
+<%end%>
 </div>
 </div>
 
