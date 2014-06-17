@@ -1,0 +1,16 @@
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+      <div class="blogcontent">
+
+   <div class="panel panel-default">
+    <% @cgus.each do |cgu| %>
+  <div class="panel-heading"><b><%= cgu.article %></b></div>
+  <div class="panel-body">
+      <%= raw cgu.body %>
+  </div>
+   <%end%>
+</div>
+</div>
+</div>

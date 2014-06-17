@@ -2,6 +2,9 @@ RailsStripeMembershipSaas::Application.routes.draw do
 
 
 
+  resources :cgus
+
+
   resources :cgvs
 
 

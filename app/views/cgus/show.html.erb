@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Article:</b>
+  <%= @cgu.article %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @cgu.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_cgu_path(@cgu) %> |
+<%= link_to 'Back', cgus_path %>

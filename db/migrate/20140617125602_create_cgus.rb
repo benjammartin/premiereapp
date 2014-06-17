@@ -1,6 +1,6 @@
-class CreateCgvs < ActiveRecord::Migration
+class CreateCgus < ActiveRecord::Migration
   def change
-    create_table :cgvs do |t|
+    create_table :cgus do |t|
       t.string :article
       t.text :body
 
