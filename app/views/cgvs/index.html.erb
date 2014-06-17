@@ -1,18 +1,10 @@
-<br>
-<br>
 <div class="container">
   <div class="row">
-  <% @cgvs.each do |cgv| %>
-<ul class="media-list">
-  <li class="media">
-    <div class="media-body">
-      <b><h4 class="media-heading"><%= cgv.article %></h4></b>
+    <% @cgvs.each do |cgv| %>
+   <b><%= cgv.article %></b>
       <%= raw cgv.body %>
+      <%end%>
     </div>
-  <%end%>
-    
-  
-  </li>
-</ul>
 
+    </div>
 
