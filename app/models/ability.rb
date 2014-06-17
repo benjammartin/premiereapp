@@ -10,5 +10,6 @@ class Ability
     end
     can :read, Installation
     can :read, Cgv
+    can :read, Cgu
   end
 end

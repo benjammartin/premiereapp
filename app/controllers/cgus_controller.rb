@@ -1,4 +1,5 @@
 class CgusController < ApplicationController
+   load_and_authorize_resource
   # GET /cgus
   # GET /cgus.json
   def index
