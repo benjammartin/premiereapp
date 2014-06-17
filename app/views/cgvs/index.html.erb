@@ -1,6 +1,16 @@
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+      <div class="blogcontent">
 
+   <div class="panel panel-default">
     <% @cgvs.each do |cgv| %>
-   <b><%= cgv.article %></b>
+  <div class="panel-heading"><b><%= cgv.article %></b></div>
+  <div class="panel-body">
       <%= raw cgv.body %>
-      <%end%>
-   
+  </div>
+   <%end%>
+</div>
+</div>
+</div>
