@@ -7,7 +7,7 @@ RailsStripeMembershipSaas::Application.routes.draw do
   
   get 'cgu', :to => 'cgus#index'
   get 'cgu/new', :to => 'cgus#new'
-  get 'cgu/edit', :to => 'cgus#edit
+  get 'cgu/edit', :to => 'cgus#edit'
 
   get 'faq', :to => 'questions#index'
 
