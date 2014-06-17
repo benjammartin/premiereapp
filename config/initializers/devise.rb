@@ -33,7 +33,7 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
   Devise.mailchimp_api_key = '5d717c6769efa2a91beda29a3b1e665e-us8'
-  Devise.mailing_list_name = 'Première App'
+  Devise.mailing_list_name = 'premiere'
   Devise.double_opt_in = false  
   Devise.send_welcome_email = true
 
