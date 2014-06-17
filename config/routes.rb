@@ -1,5 +1,10 @@
 RailsStripeMembershipSaas::Application.routes.draw do
-  resources :cgv
+
+
+  resources :cgvs 
+
+  get 'cgv', :to => 'cgvs#index'
+  
 
 
   resources :questions
