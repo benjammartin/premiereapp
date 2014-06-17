@@ -1,8 +1,6 @@
 RailsStripeMembershipSaas::Application.routes.draw do
 
-  get "git/add"
 
-  get "git/."
 
 resources :cgus 
   resources :cgvs 
