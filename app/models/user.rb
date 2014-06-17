@@ -58,6 +58,7 @@ class User < ActiveRecord::Base
       customer.email = email
       customer.description = name
       customer.save
+      mailchimp_client.lists.subscribe(mailchimp_list_id, {'email' => email_address})
     end
     self.last_4_digits = customer.cards.data.first["last4"]
     self.customer_id = customer.id
