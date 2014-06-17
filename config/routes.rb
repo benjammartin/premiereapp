@@ -1,12 +1,13 @@
 RailsStripeMembershipSaas::Application.routes.draw do
 
 
+  resources :cgvs 
 
-  resources :cgus
+  get 'cgv', :to => 'cgvs#index'
+  
+  get 'cgu', :to => 'cgus#index'
 
-
-  resources :cgvs
-
+  get 'faq', :to => 'questions#index'
 
   resources :questions
 

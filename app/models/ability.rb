@@ -11,5 +11,6 @@ class Ability
     can :read, Installation
     can :read, Cgv
     can :read, Cgu
+    can :read, Question
   end
 end
