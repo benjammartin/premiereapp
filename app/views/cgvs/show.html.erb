@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Article:</b>
+  <%= @cgv.article %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @cgv.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_cgv_path(@cgv) %> |
+<%= link_to 'Back', cgvs_path %>

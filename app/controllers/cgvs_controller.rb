@@ -1,5 +1,4 @@
 class CgvsController < ApplicationController
-  load_and_authorize_resource
   # GET /cgvs
   # GET /cgvs.json
   def index
@@ -13,7 +12,14 @@ class CgvsController < ApplicationController
 
   # GET /cgvs/1
   # GET /cgvs/1.json
+  def show
+    @cgv = Cgv.find(params[:id])
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @cgv }
+    end
+  end
 
   # GET /cgvs/new
   # GET /cgvs/new.json
