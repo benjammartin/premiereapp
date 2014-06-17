@@ -56,7 +56,7 @@
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "form-control"}%>
       <%= text_field_tag :card_code, nil, name: nil, class: "form-control form-ccv",  :placeholder => "CCV"   %>
     </div>
-<%= render :partial => "devise/shared/mailchimp/form", :locals => {:form => f} %>
+<% render :partial => "devise/shared/mailchimp/form", :locals => {:form => f} %>
     </div>
  <br>
   <% end %>
