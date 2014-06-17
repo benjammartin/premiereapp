@@ -5,11 +5,11 @@ RailsStripeMembershipSaas::Application.routes.draw do
 resources :cgus 
   resources :cgvs 
 
-  get 'cgv', :to => 'home#cgv'
+  get 'cgv', :to => 'home#cgv', as: :thecgv
   
-  get 'cgu', :to => 'home#cgu'
+  get 'cgu', :to => 'home#cgu', as: :thecgu
 
-  get 'faq', :to => 'home#faq'
+  get 'faq', :to => 'home#faq', as: :thefaq
 
   resources :questions
 
@@ -36,7 +36,7 @@ resources :cgus
  
  
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'courses/1'
   end
   root :to => "home#index"
   devise_for :users, :controllers => { :registrations => 'registrations' }
