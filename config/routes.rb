@@ -1,15 +1,17 @@
 RailsStripeMembershipSaas::Application.routes.draw do
 
+  get "git/add"
 
+  get "git/."
+
+resources :cgus 
   resources :cgvs 
 
-  get 'cgv', :to => 'cgvs#index'
+  get 'cgv', :to => 'home#cgv'
   
-  get 'cgu', :to => 'cgus#index'
-  get 'cgu/new', :to => 'cgus#new'
-  get 'cgu/edit', :to => 'cgus#edit'
+  get 'cgu', :to => 'home#cgu'
 
-  get 'faq', :to => 'questions#index'
+  get 'faq', :to => 'home#faq'
 
   resources :questions
 
