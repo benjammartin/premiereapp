@@ -2,7 +2,7 @@ class CgvsController < ApplicationController
   # GET /cgvs
   # GET /cgvs.json
   def index
-    @cgvs = Cgv.all
+    @cgvs = Cgv.order('created_at')
 
     respond_to do |format|
       format.html # index.html.erb
