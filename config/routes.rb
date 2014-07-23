@@ -36,7 +36,7 @@ resources :cgus
  
  
   authenticated :user do
-    root :to => 'courses/1'
+    root :to => 'courses#index'
   end
   root :to => "home#index"
   devise_for :users, :controllers => { :registrations => 'registrations' }
