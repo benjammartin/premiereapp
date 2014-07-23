@@ -1,14 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="page-header">
-        <h6>Hello <small>
-          <%= @current_user.name %></small>
-        </h6>
-      </div>
-    </div>
-  </div>
-    <br>
+    <div class="col-md-8">
+       <br>
       <div class="blogcontent">
         <% for topic in @topics %>
         <strong> 
@@ -30,7 +22,11 @@
         <% end %>
       </div>
     </div>
-  </div>
+
+   <br>
+    <div class="col-md-4">
+        <%= render 'steps/disq', :locals => {  } %>
+    </div>
 </div>
 
 
