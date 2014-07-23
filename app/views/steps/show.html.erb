@@ -5,8 +5,15 @@
 <div id="wistia_<%= @step.video %>" class="wistia_embed" style="width:1170px;height:660px;">&nbsp;</div>
 <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
 <script>
-wistiaEmbed = Wistia.embed("<%= @step.video %>");
+/*<![CDATA[*/
+    wistiaEmbed = Wistia.embed("<%= @step.video %>", {
+      videoFoam: true
+    });
+  /*]]*/
 </script>
+
+
+
 <br/>
 <h2>
   <%= @step.name %>
