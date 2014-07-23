@@ -13,6 +13,7 @@
   <h1><%= course.name %></h1>
   <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
 </div>
+<td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <%end%>
 </div>
 <script>
