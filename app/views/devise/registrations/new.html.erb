@@ -17,6 +17,10 @@
    </legend>
   <%= hidden_field_tag 'product', params[:product] %>
   <%= display_base_errors resource %>
+
+<%= devise_error_messages! %>
+
+   
    <div class="field">
    
   <%= f.text_field :name, :autofocus => true, class: "form-control", :placeholder => "Votre prénom "%>
