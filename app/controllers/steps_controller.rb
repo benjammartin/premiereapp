@@ -4,7 +4,7 @@ class StepsController < ApplicationController
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all.order('created_at DESC')
+    @steps = Step.all
     @topics = Topic.find(:all, :include => :steps) 
     respond_to do |format|
       format.html # index.html.erb
