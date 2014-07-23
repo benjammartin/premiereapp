@@ -8,29 +8,29 @@
       </div>
     </div>
   </div>
-  <div class="jumbotron">
-    <% @courses.each do |course| %>
-  <h1><%= course.name %></h1>
-  <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+    <br>
+      <div class="blogcontent">
+        <% for topic in @topics %>
+        <strong> 
+          <div class="panel panel-default">
+            <div class="panel-heading"><%= topic.name %>
+            </div>
+          </strong>
+          <ul class="list-group">
+            <% for step in topic.steps %>
+            <li class="list-group-item">
+              <%= link_to step.name, step %>
+              <p>
+                
+              </p>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<%end%>
-</div>
-<script>
 
-/* Place this on a template where a customer initially is identified
-   or after authentication. (Important: Update these values) */
-
-woopra.identify({
-    email: '{{ current_user.email }}',
-    name: '{{ current_user.name }}'
-});
-
-// The identify code should be added before the "track()" function
-woopra.track();
-</script>
-</div>
-
-
- 
 

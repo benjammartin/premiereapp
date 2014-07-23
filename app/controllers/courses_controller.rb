@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
+    @topics = Topic.find(:all, :include => :steps) 
 
     respond_to do |format|
       format.html # index.html.erb
