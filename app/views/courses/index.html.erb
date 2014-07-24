@@ -9,7 +9,7 @@
             </div>
           </strong>
           <ul class="list-group">
-            <% for step in topic.steps.reverse %>
+            <% for step in topic.step %>
             <li class="list-group-item">
               <%= link_to step.name, step %>
               <p>
@@ -25,7 +25,7 @@
 
    <br>
     <div class="col-md-4">
-        <%= render 'steps/disq', :locals => {  } %>
+        <%= render 'disq', :locals => { title: @topic } %>
     </div>
 </div>
 

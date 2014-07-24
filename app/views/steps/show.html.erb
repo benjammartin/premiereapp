@@ -48,8 +48,10 @@
 </div>
 <div class="col-lg-4 sidebar"></div>
 
-
+<% if current_user.admin? %>
 
 
 
 <p> <%= link_to "Supprimer", step_path, :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+<% end %>
