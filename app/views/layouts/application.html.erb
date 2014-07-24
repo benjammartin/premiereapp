@@ -1,13 +1,22 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Apprenez à coder par vous même" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Apprenez à coder par vous même" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "Apprenez à constuire votre Web Application en 30 jours" %></title>
+    <meta name="description=" content="Apprendre Rails, apprendre à coder, rails 4, Ruby 2, Bootstrap, heroku">
+
+<!-- Facebook -->
+<meta property="og:title" content="Apprenez à (re)coder Instagram en 30 jours" />
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="#" />
+<meta property="og:url" content="https://www.premiereapp.com" />
+<meta property="og:description" content="Vous avez une idée ? N'attendez plus, apprenez à constuire votre Web Application" />
+
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Apprenez à constuire votre Web Application" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Start of Woopra Code -->
 <script>
 (function(){
@@ -23,11 +32,12 @@ woopra.track();
 
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-
+<div class="container">
     <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+   
+        <%= content_tag(:div, msg, class: "alert alert-info alert-dismissable centeralert-#{name}") %>
         <% end %>
-       
+       </div>
           <%= render 'layouts/navigation' %>
 
               <%= yield %>

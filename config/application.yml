@@ -13,5 +13,5 @@ ADMIN_NAME: First User
 ADMIN_EMAIL: benjammartin@gmail.com
 ADMIN_PASSWORD: cafard2805
 ROLES: [admin, silver, gold, platinum, rails]
-STRIPE_API_KEY: sk_live_XhtK3AUGqNDz09M6MerjR7Rs
-STRIPE_PUBLIC_KEY: pk_live_TkDrZykRXe9PqBkHfBSf5cNz
+STRIPE_API_KEY: sk_test_6GOpadR2DN0ubGYNt6gHmrTC
+STRIPE_PUBLIC_KEY: pk_test_gm7XclilFx020Dca5oRpTaVG
