@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/guilleiguaran/sass-rails.git
-  revision: 0393d9e1a6e4a776e61f16fb75f97971b9f4abd2
-  branch: backport
-  specs:
-    sass-rails (4.0.1)
-      railties (>= 3.2.0, < 5.0)
-      sass (>= 3.2.0)
-      sprockets-rails (~> 2.0.0.backport1)
-
-GIT
   remote: https://github.com/ycourse/devise_mailchimp.git
   revision: fd81f60f121b429c104147a77f21071b17f9fff9
   specs:
@@ -267,7 +257,7 @@ DEPENDENCIES
   rake
   rolify (>= 3.2.0)
   rspec-rails (>= 2.12.2)
-  sass-rails!
+  sass
   simple_form
   sprockets (= 2.2.2.backport2)
   sprockets-rails (= 2.0.0.backport1)
