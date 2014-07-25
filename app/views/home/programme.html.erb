@@ -1,19 +1,45 @@
 <div class="container">
-  <br>
-  <br>
-  <div class="row">
-      <div class="blogcontent">
 
-   <div class="panel">
-    <% @chapitres.each do |chapitre| %>
 
-  <div class="panel-heading"><b><%= chapitre.title %></b></div>
-  <div class="panel-body">
-      <%= raw chapitre.text %>
+<br>
+
+<div class="row">
+  <div class="col-md-8"><div class="panel">
+  <% @chapitres.each do |chapitre| %>
+  <div class="panel-heading">
+    <b><%= chapitre.title %></b>
   </div>
-   <%end%>
+  <div class="panel-body">
+    <%= raw chapitre.text %>
+  </div>
+  <%end%>
+</div></div>
+  <div class="col-md-4">
 
+
+
+<div class="thumbnail">
+      <%= image_tag("ben.jpg", class: "img-rounded") %> 
+      <div class="caption">
+        <h5><b>LE FONDATEUR </b>BENJAMIN</h5>
+        <div align="justify"> Première App est un programme qui va vous permettre de construire une application web en très peu de temps. C’est en apprenant à construire cette dernière que vous apprendrez à coder. À la fin de ce programme, vous serrez en mesure de mettre en place votre propre application avec ce que vous aurez appris et de continuer votre apprentissage en toute autonomie.
+
+<br>
+<br>
+          <a href="https://twitter.com/benjammartin" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @benjammartin</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
 </div>
 
-</div>
+
+
 </div>
