@@ -13,7 +13,7 @@ def faq
 end
 
 def programme
-@chapitres = Chapitre.all
+@chapitres = Chapitre.order('created_at ASC')
 end
 
 
