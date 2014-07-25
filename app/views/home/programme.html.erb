@@ -4,7 +4,15 @@
 <br>
 
 <div class="row">
-  <div class="col-md-8"><div class="panel">
+
+  <div class="col-md-8">
+  <div class="page-header">
+  <h5>Reproduisez une Application Web type <b>Instagram</b> </h5>
+  <p>étape par étape en 30 jours</p>
+</div>
+
+
+    <div class="panel">
   <% @chapitres.each do |chapitre| %>
   <div class="panel-heading">
     <b><%= chapitre.title %></b>
@@ -38,6 +46,21 @@
 
 
   </div>
+  <p><b>CE QUE VOUS ALLEZ RECEVOIR</b></p>
+  <ul class="list-group">
+  <li class="list-group-item">Des heures de cours en vidéo étape par étape</li>
+  <li class="list-group-item">Une ranscription écrite sous chaque étape</li>
+  <li class="list-group-item">Des compétences en Web développement</li>
+  <li class="list-group-item">Le code source de l'application</li>
+</ul>
+<p><b>POUR QUI ?</b></p>
+  <ul class="list-group">
+  <li class="list-group-item">Débutants et faux débutants</li>
+  <li class="list-group-item">Entrepreneurs</li>
+  <li class="list-group-item">Développeurs front end</li>
+</ul>
+
+<%= link_to "Commencer maintenant", new_user_registration_path(:product => 'rails'), class: "btn btn-primary btn-hg" %>
 </div>
 
 
