@@ -2,6 +2,9 @@ RailsStripeMembershipSaas::Application.routes.draw do
 
 
 
+  resources :chapitres
+
+
 resources :cgus 
   resources :cgvs 
 
@@ -10,6 +13,9 @@ resources :cgus
   get 'cgu', :to => 'home#cgu', as: :thecgu
 
   get 'faq', :to => 'home#faq', as: :thefaq
+
+
+  get 'programme', :to => 'home#programme', as: :theprogramme
 
   resources :questions
 

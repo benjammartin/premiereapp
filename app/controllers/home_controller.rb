@@ -12,6 +12,9 @@ def faq
  @questions = Question.all
 end
 
+def programme
+@chapitres = Chapitre.all
+end
 
 
 end

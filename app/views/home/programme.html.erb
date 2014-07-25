@@ -1,0 +1,19 @@
+<div class="container">
+  <br>
+  <br>
+  <div class="row">
+      <div class="blogcontent">
+
+   <div class="panel">
+    <% @chapitres.each do |chapitre| %>
+
+  <div class="panel-heading"><b><%= chapitre.title %></b></div>
+  <div class="panel-body">
+      <%= raw chapitre.text %>
+  </div>
+   <%end%>
+
+</div>
+
+</div>
+</div>
