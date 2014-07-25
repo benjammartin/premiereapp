@@ -12,5 +12,6 @@ class Ability
     can :read, Cgv
     can :read, Cgu
     can :read, Question
+    can :read, Chapitre
   end
 end

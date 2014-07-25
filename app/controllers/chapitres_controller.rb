@@ -1,4 +1,5 @@
 class ChapitresController < ApplicationController
+   load_and_authorize_resource
   # GET /chapitres
   # GET /chapitres.json
   def index
