@@ -13,7 +13,7 @@ extend FriendlyId
 
 
 def next_step
-  self.class.first(:conditions => ["name < ?", name], :order => "name desc")
+  self.class.where("created_at < ?", created_at).reorder("created_at desc").first 
 end
 
 
