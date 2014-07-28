@@ -38,15 +38,17 @@
   <% else %>
   <legend>
      <br>
-      <h3>Paiement sécurisé par carte bancaire</h3>
+     <%= image_tag "lock.png" %>
+      <h3>Paiement par carte bancaire</h3>
+      <p> Paiement sécurisé et crypté 128-bit SSL.</p>
     </legend>
     <p class="lead">
       <strong><span class="price">
-       <%= price_in_euro (@plan.amount) * 10 %> / an 
+       <%= price_in_euro (@plan.amount) * 10 %> / AN
       </span></strong>
     </p>
     <div class="cc-icons">
-          <%= image_tag "cb.png" %>&nbsp;<%= image_tag "mastercard.png" %>&nbsp;<%= image_tag "am.png" %>&nbsp;<%= image_tag "visa.png" %>
+          <%= image_tag "maestro.png" %>&nbsp;<%= image_tag "mastercard.png" %>&nbsp;<%= image_tag "amex.png" %>&nbsp;<%= image_tag "visa.png" %>
 
     </div>
     <br>
@@ -58,7 +60,7 @@
       <div class="form-inline">
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+10}, {name: nil, id: "card_year", class: "form-control"}%>
-      <%= text_field_tag :card_code, nil, name: nil, class: "form-control form-ccv",  :placeholder => "CCV"   %>
+      <%= text_field_tag :card_code, nil, name: nil, class: "form-ccv form-control",  :placeholder => "***", :style => "width: 3em", :size => "3" %>
     </div>
 <% render :partial => "devise/shared/mailchimp/form", :locals => {:form => f} %>
     </div>
