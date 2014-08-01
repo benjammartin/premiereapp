@@ -12,6 +12,17 @@ class User < ActiveRecord::Base
   before_save :update_stripe
   before_destroy :cancel_subscription
 
+
+
+def stripe_coupon_valid
+    begin
+      Stripe::Coupon.retrieve(stripe_coupon)
+    rescue
+      errors.add(:coupon, "The coupon code you provided is invalid")
+    end
+  end
+
+
   def update_plan(role)
     self.role_ids = []
     self.add_role(role.name)
@@ -48,6 +59,7 @@ class User < ActiveRecord::Base
           :plan => roles.first.name,
           :coupon => coupon
         )
+        
       end
     else
       customer = Stripe::Customer.retrieve(customer_id)
@@ -85,6 +97,11 @@ class User < ActiveRecord::Base
     errors.add :base, "Unable to cancel your subscription. #{e.message}."
     false
   end
+
+
+
+
+
   
   def expire
     UserMailer.expire_email(self).deliver
